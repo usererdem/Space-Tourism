@@ -1,4 +1,14 @@
 /* --------------------------- */
+/* Custom properties */
+/* --------------------------- */
+:root {
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
+}
+
+
+/* --------------------------- */
 /* Reset */
 /* --------------------------- */
 
@@ -88,3 +98,21 @@ gap: var(--gap, 1rem);
   white-space: nowrap; /* added line */
   border: 0;
 }
+
+.box {
+  background: lightblue;
+  padding: 3em;
+}
+
+.call-to-action {
+  --gap: 5rem;
+  background: pink;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+/* colors */
+
+.bg-dark { background-color: hsl(var(--clr-dark));}
+.bg-light { background-color: hsl(var(--clr-light));}
+.bg-white { background-color: hsl(var(--clr-white));}
