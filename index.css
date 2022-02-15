@@ -67,6 +67,9 @@ body {
   background-color: hsl(var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 /* make images easier to work with */
@@ -120,6 +123,26 @@ select {
   padding-inline: 2em;
   max-width: 80rem;
   margin-inline: auto; /* margin: 0 auto; */
+}
+
+.grid-container {
+  display: grid;
+}
+
+@media (min-width: 45rem) {
+  .grid-container {
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
+    /* grid-template-columns: 2em minmax(0, 40rem) minmax(0, 40rem) 2em; */
+  }
+
+  .grid-container > *:first-child {
+    grid-column: 2;
+  }
+
+  .grid-container > *:last-child {
+    grid-column: 3;
+  }
 }
 
 .sr-only {
@@ -233,7 +256,7 @@ select {
 
 .large-button {
   position: relative;
-  display: grid;
+  display: inline-grid;
   z-index: 1;
   place-items: center;
   padding: 0 2em;
@@ -325,14 +348,14 @@ select {
   border-radius: 50%;
   aspect-ratio: 1;
   text-decoration: none;
-  border: 1px solid hsl(var(--clr-white) / .2);
+  border: 1px solid hsl(var(--clr-white) / 0.2);
   background: hsl(var(--clr-dark));
   color: hsl(var(--clr-white) / 1);
 }
 
 .medium-button:hover,
 .medium-button:focus {
-  border: 1px solid hsl(var(--clr-white) / .6);
+  border: 1px solid hsl(var(--clr-white) / 0.6);
 }
 
 .medium-button:active,
