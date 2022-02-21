@@ -130,9 +130,18 @@ select {
   gap: var(--gap, 1rem);
 }
 
+/* .flex.even-columns > * {
+  width: 100%;
+  outline: 1px solid lime;
+} */
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
+}
+
+.d-block {
+  display: block;
 }
 
 .flow > *:where(:not(:first-child)) {
@@ -147,13 +156,20 @@ select {
 
 .grid-container {
   display: grid;
+  text-align: center;
+  place-items: center;
+  padding-inline: 1rem;
 }
 
-@media (min-width: 45rem) {
+.grid-container * {
+  max-width: 50ch;
+}
+
+@media (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(2rem, 1fr);
-    /* grid-template-columns: 2em minmax(0, 40rem) minmax(0, 40rem) 2em; */
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
   }
 
   .grid-container > *:first-child {
@@ -162,6 +178,11 @@ select {
 
   .grid-container > *:last-child {
     grid-column: 3;
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 }
 
@@ -275,6 +296,7 @@ select {
 /* --------------------------- */
 
 .large-button {
+  font-size: 2rem;
   position: relative;
   display: inline-grid;
   z-index: 1;
