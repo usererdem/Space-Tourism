@@ -357,6 +357,11 @@ select {
     padding: min(20rem, 15vh) 2rem;
     flex-direction: column;
     transform: translateX(100%);
+    transition: transform 0.35s ease-in-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0);
   }
 
   .mobile-nav-toggle {
@@ -368,9 +373,19 @@ select {
     background: transparent;
     background-image: url(./assets/shared/icon-hamburger.svg);
     background-repeat: no-repeat;
+    background-position: center;
     width: 1.5rem;
     aspect-ratio: 1;
     border: 0;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url(./assets/shared/icon-close.svg);
+  }
+
+  .mobile-nav-toggle:focus-visible {
+    outline: 5px solid white;
+    outline-offset: 5px;
   }
 
   .primary-navigation.underline-indicators > .active {
