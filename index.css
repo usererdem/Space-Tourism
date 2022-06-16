@@ -21,6 +21,9 @@
   --ff-serif: "Bellefair", serif;
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
+
+  /* utilities */
+  --margin-top-medium: 7rem;
 }
 
 @media (min-width: 35em) {
@@ -695,6 +698,10 @@ body {
   grid-area: content;
 }
 
+.technology-details {
+  padding-inline: 1rem;
+}
+
 .technology-details h2 {
   color: hsl(var(--clr-light));
 }
@@ -783,6 +790,7 @@ body {
       ". title title ."
       ". content image ."
       ". tabs image .";
+    align-items: start;
   }
 
 
@@ -803,15 +811,15 @@ body {
     grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 5rem) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr) ;
     grid-template-areas: 
       ". title title . ."
-      ". tabs content image . "
-      ". tabs content image ."
-      ". . . image .";
+      ". tabs content image . ";
     justify-items: start;
   }
 
   .numbered-indicators {
     flex-direction: column;
+    align-self: start;
     gap: 2rem;
+    margin-top: var(--margin-top-medium);
   }
   .numbered-title--technology {
     padding-inline: 0;
@@ -829,16 +837,16 @@ body {
     grid-column: span 2;
     max-width: 100%;
     justify-self: end;
+    align-self: start;
   }
 
-  
-
-  .technology-details > p {
-    line-height: 2;
+  .technology-details {
+    align-self: start;
+    margin-top: var(--margin-top-medium);
   }
 
   .technology-details h2 {
-    font-size: var(--fs-500);
+    font-size: 1.3rem;
   }
 
   
