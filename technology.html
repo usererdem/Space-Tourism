@@ -43,8 +43,8 @@
     </nav>
   </header>
 
-  <main id="main" class="grid-container grid-container--technology flow">
-    <h1 class="numbered-title"><span aria-hidden="true">03</span>Space launch 101</h1>
+  <main id="main" class="grid-container grid-container--technology">
+    <h1 class="numbered-title numbered-title--technology"><span aria-hidden="true">03</span>Space launch 101</h1>
 
     <div class="numbered-indicators flex" role="tablist" aria-label="technology tablist">
       <button class="medium-button" aria-selected="true" aria-controls="capsule-tab" data-image="capsule-image" role="tab" tabindex="0">1</button>
@@ -85,18 +85,20 @@
 
 
     <picture id="capsule-image">
-      <source srcset="assets/technology/image-space-capsule-landscape.jpg" type="image/webp">
-      <img src="assets/technology/image-space-capsule-landscape.jpg" alt="space capsule image">
+      <!-- <source class="technology-image-landscape" srcset="assets/technology/image-space-capsule-landscape.jpg" type="image/webp"> -->
+      <img class="technology-image-landscape" src="assets/technology/image-space-capsule-landscape.jpg" alt="space capsule image">
+      <!-- <source class="technology-image-portrait" srcset="assets/technology/image-space-capsule-portrait.jpg" type="image/webp"> -->
+      <img class="technology-image-portrait" src="assets/technology/image-space-capsule-portrait.jpg" alt="space capsule image">
     </picture>
 
     <picture hidden id="spaceport-image">
-      <source srcset="assets/technology/image-spaceport-landscape.jpg" type="image/webp">
-      <img src="assets/technology/image-spaceport-landscape.jpg" alt="spaceport image">
+      <img class="technology-image-landscape" src="assets/technology/image-spaceport-landscape.jpg" alt="spaceport image">
+      <img class="technology-image-portrait" src="assets/technology/image-spaceport-portrait.jpg" alt="spaceport image">
     </picture>
 
     <picture hidden id="vehicle-image">
-      <source srcset="assets/technology/image-launch-vehicle-landscape.jpg" type="image/webp">
-      <img src="assets/technology/image-launch-vehicle-landscape.jpg" alt="vehicle image">
+      <img class="technology-image-landscape" src="assets/technology/image-launch-vehicle-landscape.jpg" alt="vehicle image">
+      <img class="technology-image-portrait" src="assets/technology/image-launch-vehicle-portrait.jpg" alt="vehicle image">
     </picture>
   </main>
 
