@@ -182,7 +182,7 @@ select {
   color: hsl(var(--clr-dark));
   padding: 0.5em 1em;
   margin-inline: auto;
-  transform: translateY(-100%);
+  transform: translateY(-102%);
   transition: transform 0.2s ease-in;
 }
 
@@ -490,6 +490,7 @@ select {
   border: 1px solid hsl(var(--clr-white) / 0.2);
   background: hsl(var(--clr-dark));
   color: hsl(var(--clr-white) / 1);
+  transition: all 0.15s ease-in;
 }
 
 .medium-button:hover,
@@ -497,14 +498,13 @@ select {
   border: 1px solid hsl(var(--clr-white) / 0.6);
 }
 
-.medium-button:active,
-.medium-button:visited {
-  background-color: hsl(var(--clr-white) / 1);
+.numbered-indicators > [aria-selected="true"] {
+  background: hsl(var(--clr-white) / .9);
   color: hsl(var(--clr-dark));
 }
 
 /* --------------------------- */
-/* Pahe specific background */
+/* Page specific background */
 /* --------------------------- */
 body {
   background-size: cover;
@@ -562,6 +562,24 @@ body {
 @media (min-width: 45rem) {
   .crew {
       background-image: url(./assets/crew/background-crew-desktop.jpg);
+  }
+} 
+
+/* technology */
+.technology {
+  background-image: url(./assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+  .technology {
+      background-position: center center;
+      background-image: url(./assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .technology {
+      background-image: url(./assets/technology/background-technology-desktop.jpg);
   }
 } 
 
@@ -663,9 +681,9 @@ body {
   padding-inline: 0;
 }
 
-.grid-container--technology > picture {
+.grid-container--technology > picture, img {
   grid-area: image;
-  max-width: 100%;
+  max-width: 101%;
   align-self: start;
 }
 
@@ -679,6 +697,10 @@ body {
 
 .technology-details h2 {
   color: hsl(var(--clr-light));
+}
+
+.technology-image-portrait {
+  display: none;
 }
 
 @media (min-width: 35em) {
@@ -699,6 +721,19 @@ body {
       "content"
       "tabs"
       "image";
+  }
+
+  .grid-container--technology {
+    --flow-space: 2rem;
+    grid-template-areas: 
+      "title"
+      "image"
+      "tabs"
+      "content";
+  }
+
+  .numbered-title--technology {
+    padding-inline: 1rem;
   }
 }
 
@@ -750,6 +785,7 @@ body {
       ". tabs image .";
   }
 
+
   /* .grid-container--crew > .dot-indicators {
     justify-self: start;
   } */
@@ -760,4 +796,50 @@ body {
     align-self: end;
     max-width: 90%;
   }
+
+  /* technology */
+  .grid-container--technology {
+    --flow-space: 5rem;
+    grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 5rem) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr) ;
+    grid-template-areas: 
+      ". title title . ."
+      ". tabs content image . "
+      ". tabs content image ."
+      ". . . image .";
+    justify-items: start;
+  }
+
+  .numbered-indicators {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .numbered-title--technology {
+    padding-inline: 0;
+  }
+
+  .technology-image-landscape {
+    display: none;
+  }
+
+  .technology-image-portrait {
+    display: block;
+  }
+
+  .grid-container--technology > picture {
+    grid-column: span 2;
+    max-width: 100%;
+    justify-self: end;
+  }
+
+  
+
+  .technology-details > p {
+    line-height: 2;
+  }
+
+  .technology-details h2 {
+    font-size: var(--fs-500);
+  }
+
+  
 }
