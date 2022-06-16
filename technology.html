@@ -46,14 +46,14 @@
   <main id="main" class="grid-container grid-container--technology flow">
     <h1 class="numbered-title"><span aria-hidden="true">03</span>Space launch 101</h1>
 
-    <div class="flex">
-      <button class="medium-button" aria-selected="true">1</button>
-      <button class="medium-button" aria-selected="false">2</button>
-      <button class="medium-button" aria-selected="false">3</button>
+    <div class="numbered-indicators flex" role="tablist" aria-label="technology tablist">
+      <button class="medium-button" aria-selected="true" aria-controls="capsule-tab" data-image="capsule-image" role="tab" tabindex="0">1</button>
+      <button class="medium-button" aria-selected="false" aria-controls="spaceport-tab" data-image="spaceport-image" role="tab" tabindex="-1">2</button>
+      <button class="medium-button" aria-selected="false" aria-controls="vehicle-tab" data-image="vehicle-image" role="tab" tabindex="-1">3</button>
     </div>
 
     <!-- Space Capsule -->
-    <article class="technology-info" id="capsule-tab" role="tabpanel" tabindex="0">
+    <article class="technology-details" id="capsule-tab" role="tabpanel" tabindex="0">
       <header class="flow flow--space-small">
         <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
         <p class="fs-700 uppercase ff-serif">Space capsule</p>
@@ -63,7 +63,7 @@
         gym, cinema, and plenty of other activities to keep you entertained.</p>
     </article>
 
-    <article hidden class="technology-info" id="spaceport-tab" role="tabpanel" tabindex="0">
+    <article hidden class="technology-details" id="spaceport-tab" role="tabpanel" tabindex="0">
       <header class="flow flow--space-small">
         <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
         <p class="fs-700 uppercase ff-serif">Space capsule</p>
@@ -73,7 +73,7 @@
         advantage of the Earth’s rotation for launch.</p>
     </article>
 
-    <article hidden class="technology-info" id="vehicle-tab" role="tabpanel" tabindex="0">
+    <article hidden class="technology-details" id="vehicle-tab" role="tabpanel" tabindex="0">
       <header class="flow flow--space-small">
         <h2 class="fs-600 ff-serif uppercase">The terminology...</h2>
         <p class="fs-700 uppercase ff-serif">Space capsule</p>
