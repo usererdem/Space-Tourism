@@ -653,7 +653,33 @@ body {
 }
 
 /* technology layout */
+.grid-container--technology {
+  --flow-space: 0.1rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+  padding-inline: 0;
+}
 
+.grid-container--technology > picture {
+  grid-area: image;
+  max-width: 100%;
+  align-self: start;
+}
+
+.grid-container--technology > .numbered-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--technology > .technology-details {
+  grid-area: content;
+}
+
+.technology-details h2 {
+  color: hsl(var(--clr-light));
+}
 
 @media (min-width: 35em) {
   .numbered-title {
