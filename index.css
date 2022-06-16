@@ -600,6 +600,7 @@ body {
 .grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
+  align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -701,8 +702,7 @@ body {
       ". image content .";
   }
 
-  .grid-container--destination > picture,
-  .grid-container--crew > picture {
+  .grid-container--destination > picture {
     max-width: 90%;
   }
 
@@ -712,6 +712,8 @@ body {
   }
 
   .grid-container--crew {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem, 1fr);
+    justify-items: start;
     padding-bottom: 0;
     grid-template-areas:
       ". title title ."
@@ -719,12 +721,14 @@ body {
       ". tabs image .";
   }
 
-  .grid-container--crew > .dot-indicators {
+  /* .grid-container--crew > .dot-indicators {
     justify-self: start;
-  }
+  } */
 
   /* Making the image stick to the bottom, can cause problem on really large screens */
-  /* .grid-container--crew > picture {
+  .grid-container--crew > picture {
+    grid-column: span 2;
     align-self: end;
-  } */
+    max-width: 90%;
+  }
 }
