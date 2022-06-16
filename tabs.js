@@ -4,8 +4,8 @@ const tabs = tabList.querySelectorAll('[role="tab"]');
 tabList.addEventListener("keydown", changeTabFocus);
 
 tabs.forEach((tab) => {
-  tab.addEventListener('click', changeTabPanel)
-})
+  tab.addEventListener("click", changeTabPanel);
+});
 
 let tabFocus = 0;
 function changeTabFocus(e) {
@@ -44,15 +44,23 @@ function changeTabPanel(e) {
   const tabContainer = targetTab.parentNode;
   const mainContainer = tabContainer.parentNode;
 
-  mainContainer
-  .querySelectorAll('[role="tabpanel"]')
-  .forEach((panel) => panel.setAttribute("hidden", true));
+  tabContainer.querySelector('[aria-selected="true"]').setAttribute("aria-selected", false);
 
-  mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden')
+  targetTab.setAttribute("aria-selected", true);
 
-  mainContainer
-  .querySelectorAll('picture')
-  .forEach((picture) => picture.setAttribute("hidden", true));
+  hideContent(mainContainer, '[role="tabpanel"]')
+  //mainContainer.querySelectorAll('[role="tabpanel"]').forEach((panel) => panel.setAttribute("hidden", true));
 
-  mainContainer.querySelector([`#${targetImage}`]).removeAttribute('hidden')
+  mainContainer.querySelector([`#${targetPanel}`]).removeAttribute("hidden");
+
+  mainContainer.querySelectorAll("picture").forEach((picture) => picture.setAttribute("hidden", true));
+
+  mainContainer.querySelector([`#${targetImage}`]).removeAttribute("hidden");
+}
+
+
+function hideContent(parent, content) {
+  parent
+      .querySelectorAll(content)
+      .forEach((item) => item.setAttribute("hidden", true));
 }
