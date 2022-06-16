@@ -652,6 +652,9 @@ body {
   /* color: hsl( var(--clr-white) / .5); */
 }
 
+/* technology layout */
+
+
 @media (min-width: 35em) {
   .numbered-title {
     justify-self: start;
